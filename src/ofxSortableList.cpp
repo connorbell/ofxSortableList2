@@ -1,6 +1,6 @@
 #include "ofxSortableList.h"
 
-ofxSortableList::ofxSortableList(const std::string & name, const ofJson& config):ofxGuiGroup(name, config) {
+ofxSortableList::ofxSortableList(const std::string & name, const ofJson& config):ofxGuiGroup2(name, config) {
 
 	dummy = nullptr;
 	draggingElement = false;
@@ -16,12 +16,12 @@ ofxSortableList::~ofxSortableList(){
 void ofxSortableList::clear() {
 	draggingElement = false;
 	draggedElement = nullptr;
-	ofxGuiGroup::clear();
+	ofxGuiGroup2::clear();
 }
 
 bool ofxSortableList::mousePressed(ofMouseEventArgs &args) {
 
-	if(ofxGuiGroup::mousePressed(args)){
+	if(ofxGuiGroup2::mousePressed(args)){
 		return true;
 	}
 
@@ -52,7 +52,7 @@ bool ofxSortableList::mousePressed(ofMouseEventArgs &args) {
 
 bool ofxSortableList::mouseDragged(ofMouseEventArgs &args) {
 
-	if(ofxGuiGroup::mouseDragged(args)){
+	if(ofxGuiGroup2::mouseDragged(args)){
 		return true;
 	}
 
@@ -115,7 +115,7 @@ bool ofxSortableList::mouseDragged(ofMouseEventArgs &args) {
 
 bool ofxSortableList::mouseReleased(ofMouseEventArgs &args){
 
-	if(ofxGuiGroup::mouseReleased(args)){
+	if(ofxGuiGroup2::mouseReleased(args)){
 		return true;
 	}
 

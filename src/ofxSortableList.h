@@ -1,6 +1,6 @@
 #pragma once
 #include "ofMain.h"
-#include "ofxGuiExtended.h"
+#include "ofxGuiExtended2.h"
 
 struct MovingElementData {
 	MovingElementData(int i1, int i2, ofxGuiElement* _widget)
@@ -19,7 +19,7 @@ struct RemovedElementData {
 	string name;
 };
 
-class ofxSortableList : public ofxGuiGroup {
+class ofxSortableList : public ofxGuiGroup2 {
 
 public:
 	ofxSortableList(const string &name="", const ofJson &config = ofJson());
@@ -53,4 +53,3 @@ private:
 	ofxGuiElement* dummy;
 
 };
-
