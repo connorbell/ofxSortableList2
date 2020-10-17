@@ -31,6 +31,11 @@ bool ofxSortableList::mousePressed(ofMouseEventArgs &args) {
 			if(getControl(i)->mousePressed(args)){
 				return true;
 			}
+            if (args.button == 2) {
+                RightClickedElementData data(i, getControl(i)->getName(), getControl(i)->getPosition());
+                ofNotifyEvent(elementRightClicked, data);
+                return true;
+            }
 			draggedElement = getControl(i);
 			draggingElement = true;
 			draggedElementOldPos = draggedElement->getPosition();

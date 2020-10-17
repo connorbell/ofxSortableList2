@@ -19,6 +19,13 @@ struct RemovedElementData {
 	string name;
 };
 
+struct RightClickedElementData {
+    RightClickedElementData(int _index, string _name, ofPoint _pos):index(_index),name(_name),position(_pos) {}
+    int index;
+    string name;
+    ofPoint position;
+};
+
 class ofxSortableList : public ofxGuiGroup2 {
 
 public:
@@ -42,6 +49,8 @@ public:
 	//is called for every single index an element is moved. when an element is moved from 2 to 4, it is called two times (2->3, 3->4)
 	ofEvent <MovingElementData> elementMovedStepByStep;
 
+    ofEvent <RightClickedElementData> elementRightClicked;
+    
 protected:
 
 private:
